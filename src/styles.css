@@ -1,0 +1,37 @@
+.App {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 500px;
+}
+
+.main {
+  background: black;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  width: 100px;
+  border-radius: 20px;
+  gap: 20px;
+}
+
+.light {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  border: 1px solid #999;
+
+  --state: attr(data-state type(<custom-ident>));
+}
+
+.red {
+  background: if(style(--state: stop): red; else: #666);
+}
+
+.orange {
+  background: if(style(--state: ready): orange; else: #666);
+}
+
+.green {
+  background: if(style(--state: go): green; else: #666);
+}
